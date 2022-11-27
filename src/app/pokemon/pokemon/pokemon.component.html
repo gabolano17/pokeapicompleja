@@ -1,0 +1,13 @@
+<div class="card my-3 text-center">
+    <div class="card-header">
+        <h3>{{pokemon.name}}</h3>
+    </div>
+    <div class="card-body">
+        <img [src]="pokemon.sprite" [alt]="pokemon.name">
+        <div>
+            <span>Weight: {{ details?.weight }}</span><br>
+            <span>Height: {{ details?.height }}</span><br>
+            <span>Type: {{ details?.types?.name || "fire" }} </span>
+        </div>
+    </div>
+</div>

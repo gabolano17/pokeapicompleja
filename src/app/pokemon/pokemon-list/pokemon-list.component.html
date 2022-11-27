@@ -1,0 +1,12 @@
+<header class="header text-center text-light">
+    <h1>Pokedex</h1>
+</header>
+<div class="row p-5">
+    <!-- | paginate: {itemsPerPage: 12, currentPage: pageActual} -->
+    <div *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 12, currentPage: pageActual}" class="col-md-4">
+        <app-pokemon [pokemon]="pokemon.pokemon" [details]="pokemon.details | async"></app-pokemon>
+    </div>
+</div>
+<div class="text-center text-light p-3">
+    <pagination-controls (pageChange)="pageActual = $event"></pagination-controls>
+</div>
